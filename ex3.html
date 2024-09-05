@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    .sports {
+        font-size: 20px;
+        font-weight: bold;
+        color: blue;
+    }
+
+    .rpg {
+        font-size: 15px;
+        font-weight: bold;
+        color: crimson;
+        border: 3px solid rgb(7, 72, 194);
+    }
+    
+</style>
+
+<body>
+
+    <div>
+        <div id="game1" class="sports" year="2022">NBA 2022</div>
+        <div id="game2" class="sports" year="2022">FIFA 2022</div>
+        <div id="game3" class="sports" year="2022">NFL 2022</div>
+        <br /> <br />
+
+        <div id="game7" year="2022">Marvel Fighter</div>
+        <br /> <br />
+
+        <div id="game4" class="rpg" year="2008">WoW</div>
+        <div id="game5" class="rpg" year="1990">Jelda</div>
+        <div id="game6" class="rpg" year="1998">diablo</div>
+
+    </div>
+
+
+    <script>
+        const game1El = document.querySelector("#game1");
+        game1El.innerHTML = "NBA 2000"; // innerHTML이 game1에 있는 NBA가 2000으로 바뀜
+
+        let yearAttr = game1El.getAttribute("year");
+        console.log('game1El year attribute = ', yearAttr);
+        yearAttr = game1El.getAttribute("year");
+        console.log('game1El year attribute = ', yearAttr);
+
+        const game2El = document.querySelector("#game2"); // 속성바꾸기(잘 안 쓰는 방법)
+        game2El.style.border = "1px solid blue";
+        game2El.style.padding = "24px";
+        game2El.style.width = "48px";
+        
+        const game7El = document.querySelector("#game7"); // game7을 rpg클래스에 추가
+        game7El.classList.add("rpg");
+
+        const rpggameEls = document.querySelectorAll(".rpg"); // rpg 클래스에 포함된 거 전부 가져오기
+        rpggameEls.forEach(function (el) { // 배열을 순차적으로 처리하는 방법 -> el에 있는 내용들 출력
+            console.log(el.innerHTML);
+        });
+
+        obj = document.querySelector("#game6");
+        obj.classList,add('sports'); // id 'game6'을 굵은 파란색 글씨로 변경
+
+        obj = document.querySelector("#game3");
+        obj.classList,remove('sports');
+        obj.classList,add('rpg'); // id 'game3' 엘리먼트를 rpg 클래스로 변경
+
+        obj = document.querySelector("#game7");
+        obj.innerHTML = 'Marvel 2022'; // id 'game7' 엘리먼트 텍스트를 'Mavel 2022'로 변경
+
+    </script>
+
+</body>
+
+</html>
